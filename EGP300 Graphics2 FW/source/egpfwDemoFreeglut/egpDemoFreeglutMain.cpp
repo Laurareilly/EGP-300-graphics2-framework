@@ -4,7 +4,7 @@
 ////	By Dan Buckstein
 ////	January 2017
 ////
-////	****Modified by: ______________________________________________________
+////	****Modified by: Laura Reilly
 ////	^^^^
 ////	NOTE: 4 asterisks anywhere means something you will have to either 
 ////		modify or complete to get it working! Good practice for starters: 
@@ -391,13 +391,14 @@ void renderGameState()
 		//	egpDrawWireCubeImmediate(viewProjMat.m, 0, 1, 1.0f, 0.5f, 0.0f);
 
 			// draw 3D primitives with retained mode (VAOs, proper)
-		//	egpActivateVAO(vao + sphere8x6VAO);
+			//egpActivateVAO(vao + sphere8x6VAO);
+			//egpActivateVAO(&vao[sphere8x6VAO]);
 		//	egpActivateVAO(vao + sphere32x24VAO);
 		//	egpActivateVAO(vao + cubeVAO);
 		//	egpActivateVAO(vao + cubeWireVAO);
 		//	egpActivateVAO(vao + cubeIndexedVAO);
 		//	egpActivateVAO(vao + cubeWireIndexedVAO);
-		//	egpDrawActiveVAO();
+			//egpDrawActiveVAO();
 		}
 	}
 
