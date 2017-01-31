@@ -47,6 +47,12 @@ extern "C"
 	unsigned int egpfwGetUnitQuadVertexCount();
 
 
+	const float *egpfwGetDiscTexcoords();
+	unsigned int egpfwGetDiscVertexCount();
+	const float *egpfwGetDiscColors();
+	const float *egpfwGetDiscPositions();
+
+
 //-----------------------------------------------------------------------------
 
 

@@ -87,14 +87,14 @@ cbtk::cbmath::vec4 cameraPosWorld(0.0f, 0.0f, cameraDistance, 1.0f), deltaCamPos
 // test vertex buffers for built-in primitive data
 enum VAOIndex
 {
-	sphere8x6VAO, sphere32x24VAO, cubeVAO, cubeWireVAO, cubeIndexedVAO, cubeWireIndexedVAO, 
+	sphere8x6VAO, sphere32x24VAO, cubeVAO, cubeWireVAO, cubeIndexedVAO, cubeWireIndexedVAO, quadVAO, discVAO,
 
 //-----------------------------
 	vaoCount
 };
 enum VBOIndex
 {
-	sphere8x6VBO, sphere32x24VBO, cubeVBO, cubeWireVBO, cubeIndexedVBO, cubeWireIndexedVBO, 
+	sphere8x6VBO, sphere32x24VBO, cubeVBO, cubeWireVBO, cubeIndexedVBO, cubeWireIndexedVBO, quadVBO, discVBO,
 
 //-----------------------------
 	vboCount
@@ -181,6 +181,21 @@ void setupGeometry()
 	// indexed wire cube
 	attribs[0].data = egpGetWireCubeIndexedPositions();
 	vao[cubeWireIndexedVAO] = egpCreateVAOInterleavedIndexed(PRIM_LINES, attribs, 1, egpGetCubeIndexedVertexCount(), (vbo + cubeWireIndexedVBO), INDEX_UINT, egpGetWireCubeIndexCount(), egpGetWireCubeIndices(), (ibo + cubeWireIndexedIBO));
+
+	//quad
+	attribs[0].data = egpfwGetUnitQuadPositions();
+	attribs[1].data = nullptr;
+	attribs[2].data = egpfwGetUnitQuadColors();
+	attribs[3].data = egpfwGetUnitQuadTexcoords();
+	vao[quadVAO] = egpCreateVAOInterleaved(PRIM_TRIANGLE_STRIP, attribs, 4, egpfwGetUnitQuadVertexCount(), (vbo + quadVBO), 0);
+
+	//disc
+	attribs[0].data = egpfwGetDiscPositions();
+	attribs[1].data = nullptr;
+	attribs[2].data = egpfwGetDiscColors();
+	attribs[3].data = egpfwGetDiscTexcoords();
+	vao[discVAO] = egpCreateVAOInterleaved(PRIM_TRIANGLE_FAN, attribs, 4, egpfwGetDiscVertexCount(), (vbo + discVBO), 0);
+
 }
 
 void deleteGeometry()
@@ -398,7 +413,9 @@ void renderGameState()
 		//	egpActivateVAO(vao + cubeWireVAO);
 		//	egpActivateVAO(vao + cubeIndexedVAO);
 		//	egpActivateVAO(vao + cubeWireIndexedVAO);
-			//egpDrawActiveVAO();
+		//	egpActivateVAO(vao + quadVAO);
+			egpActivateVAO(vao + discVAO);
+			egpDrawActiveVAO();
 		}
 	}
 
@@ -406,7 +423,7 @@ void renderGameState()
 	// TEST YOUR SHAPES
 	{
 	//	egpfwDrawColoredTriangleImmediate(viewProjMat.m, 0);
-		egpfwDrawColoredUnitQuadImmediate(viewProjMat.m, 0);
+	//	egpfwDrawColoredUnitQuadImmediate(viewProjMat.m, 0);
 	//	egpfwDrawTexturedUnitQuadImmediate(viewProjMat.m, 0);
 	}
 
