@@ -310,10 +310,12 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\source\egpfwDemoFreeglut\egpDemoFreeglutMain.cpp" />
     <ClCompile Include="3x3Matrix.c" />
+    <ClCompile Include="4x4Transformation.c" />
     <ClCompile Include="Vector3.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3x3Matrix.h" />
+    <ClInclude Include="4x4Transformation.h" />
     <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -51,9 +51,9 @@ struct Vector3 lerp(struct Vector3* start, struct Vector3* end, float t)
 	}
 
 	assignVector(&newVector, 
-				 start->x * (1.0 - t) + end->x * t,
-				 start->y * (1.0 - t) + end->y * t,
-				 start->z * (1.0 - t) + end->z * t);
+				 start->x * (1.0f - t) + end->x * t,
+				 start->y * (1.0f - t) + end->y * t,
+				 start->z * (1.0f - t) + end->z * t);
 	return newVector;
 }
 

@@ -3,11 +3,10 @@ Vector3 by Laura Reilly
 
 Certificate of Authenticity
 
-I certify that this work is
-entirely my own.The assessor of this project may reproduce this project
-and provide copies to other academic staff, and / or communicate a copy of
-this project to a plagiarism - checking service, which may retain a copy of the
-project on its database.
+I certify that this work is entirely my own.The assessor of this project may
+reproduce this project and provide copies to other academic staff, and / or
+communicate a copy of this project to a plagiarism - checking service, which
+may retain a copy of the project on its database.
 */
 
 

@@ -45,12 +45,18 @@
     <ClCompile Include="3x3Matrix.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="4x4Transformation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="3x3Matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4x4Transformation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
